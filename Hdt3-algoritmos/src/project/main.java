@@ -21,6 +21,7 @@ public class main {
 		
 		
 		while(option != 8) {
+			
 			System.out.println("Elige la opcion que deseas realizar \n"
 					+ "1.Leer el archivo para obtener los numeros \n"
 					+ "2.Crear nuevos numeros y ordenarlos\n"
@@ -32,20 +33,33 @@ public class main {
 					+ "8.Salir");
 			option = scan.nextInt();
 			
+			
 			if(option == 1) {
-				
+				/**
+				 * In this option, user selects how many values are going to be read from the file
+				 * so only the necessary values are stored
+				 */
 				System.out.println("Cuantos numeros desea obtener del documento? (10 a 3000)");
 				int QtyOfInts = scan.nextInt();
-
-				ListOfInts = new comparableInt[QtyOfInts];
 				
+				/**
+				 * The quantity of numbers that will be stored, is going to be the length of the array
+				 */
+				ListOfInts = new comparableInt[QtyOfInts];
 				
 				String ScannedNumber = "";
 				try {
 					BufferedReader reader = new BufferedReader(new FileReader("src/project/data.txt"));
 					
+					/**
+					 * The length makes it so only a set amount of numbers are read from the txt file
+					 */
 					for (int i = 0; i < ListOfInts.length; i++) {
 						ScannedNumber= reader.readLine();
+						
+						/**
+						 * Each read line is parsed into an int, to creat a comparableInt Object
+						 */
 						ListOfInts[i] = new comparableInt(Integer.parseInt(ScannedNumber));
 					}
 
@@ -58,10 +72,16 @@ public class main {
 			
 			else if(option == 2) {
 				try {
+					/**
+					 * Every time this option is called, the txt file becomes blanc
+					 */
 					new FileOutputStream("src/project/data.txt").close();
 					Writer wr = new FileWriter("src/project/data.txt");
 					Random rand = new Random();
 					
+					/**
+					 * Then 3000 random ints are created
+					 */
 					for (int i = 0; i < 3000; i++) {
 						
 						wr.write( rand.nextInt(3001) + "\n");
@@ -96,6 +116,7 @@ public class main {
 			}
 			
 			else if(option == 7) {
+				
 				BubbleSort BubbleSort = new BubbleSort(ListOfInts);
 				BubbleSort.AscendingSort();
 				
