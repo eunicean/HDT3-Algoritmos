@@ -4,7 +4,10 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.Writer;
+import java.util.Random;
 import java.util.Scanner;
 
 public class main {
@@ -31,7 +34,7 @@ public class main {
 			
 			if(option == 1) {
 				
-				System.out.println("Cuantos numeros desea obtener? (10 a 3000)");
+				System.out.println("Cuantos numeros desea obtener del documento? (10 a 3000)");
 				int QtyOfInts = scan.nextInt();
 
 				ListOfInts = new comparableInt[QtyOfInts];
@@ -51,16 +54,20 @@ public class main {
 					e.printStackTrace();
 				}
 				
-				for (comparableInt comparableInt : ListOfInts) {
-					System.out.println(comparableInt.getIntNumber());
-				}
-				
 			}
 			
 			else if(option == 2) {
 				try {
 					new FileOutputStream("src/project/data.txt").close();
+					Writer wr = new FileWriter("src/project/data.txt");
+					Random rand = new Random();
 					
+					for (int i = 0; i < 3000; i++) {
+						
+						wr.write( rand.nextInt(3001) + "\n");
+						
+					}
+					wr.close();
 					
 				} catch (FileNotFoundException e) {
 					// TODO Auto-generated catch block
