@@ -14,7 +14,7 @@ public class main {
 
 	public static void main(String[] args) {
 		 
-		comparableInt[] ListOfInts;
+		comparableInt[] ListOfInts = null;
 		
 		Scanner scan = new Scanner(System.in);
 		int option = 0;
@@ -96,7 +96,13 @@ public class main {
 			}
 			
 			else if(option == 7) {
+				BubbleSort BubbleSort = new BubbleSort(ListOfInts);
+				BubbleSort.AscendingSort();
 				
+				for (int i = 0; i < ListOfInts.length; i++) {
+					System.out.println(ListOfInts[i].getIntNumber());
+					
+				}
 			}
 			
 		}

@@ -14,7 +14,7 @@ public class comparableInt implements Comparable<comparableInt>{
 		if (IntNumber > val.IntNumber) {
 			return 1;
 		} 
-		else if(IntNumber > val.IntNumber){
+		else if(IntNumber < val.IntNumber){
 			return -1;
 		}
 		else {
@@ -22,5 +22,15 @@ public class comparableInt implements Comparable<comparableInt>{
 		}
 				
 	}
+
+	public int getIntNumber() {
+		return IntNumber;
+	}
+
+	public void setIntNumber(int intNumber) {
+		IntNumber = intNumber;
+	}
+	
+	
 
 }
