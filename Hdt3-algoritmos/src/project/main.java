@@ -80,10 +80,22 @@ public class main {
 			}
 			
 			else if(option == 3) {
+				GnomeSort GnomeSort = new GnomeSort(ListOfInts);
+				GnomeSort.AscendingSort();
+				
+				for (int i = 0; i < ListOfInts.length; i++) {
+					System.out.println(ListOfInts[i].getIntNumber());
+				}
 				
 			}
 			
 			else if(option == 4) {
+				MergeSort MergeSort = new MergeSort(ListOfInts);
+				MergeSort.AscendingSort();
+				
+				for (int i = 0; i < ListOfInts.length; i++) {
+					System.out.println(ListOfInts[i].getIntNumber());
+				}
 				
 			}
 			
