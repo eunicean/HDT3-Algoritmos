@@ -7,7 +7,7 @@ public class QuickSort <T extends Comparable<T>>{
 	
 	public T[] Ascending(T[] ListToSort, int start, int end) {
 		if (start >= end) return ListToSort; 
-		int pizq = start + 1, pder = ListToSort.length - 1;
+		int pizq = start + 1, pder = end;
 		var pivot = ListToSort[start];
 		
 		while(pizq <= pder) {
@@ -30,7 +30,7 @@ public class QuickSort <T extends Comparable<T>>{
 			ListToSort[pder] = aux;
 		}
 		
-		Ascending(ListToSort, 0, pder-1);
+		Ascending(ListToSort, start, pder-1);
 		Ascending(ListToSort, pder+1, end);
 		
 		return ListToSort;
