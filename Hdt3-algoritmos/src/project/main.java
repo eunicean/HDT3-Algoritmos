@@ -130,7 +130,10 @@ public class main {
 			}
 			
 			else if(option == 6) {
-				
+				RadixSort RadixSort = new RadixSort();
+				RadixSort.AscendigSort(ListOfInts, ListOfInts.length);
+				for (int i = 0; i < ListOfInts.length; i++)
+					System.out.println(ListOfInts[i].getIntNumber());
 			}
 			
 			else if(option == 7) {
