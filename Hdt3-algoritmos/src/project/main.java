@@ -48,6 +48,7 @@ public class main {
 				ListOfInts = new comparableInt[QtyOfInts];
 				
 				String ScannedNumber = "";
+				System.out.println("Lista de numeros");
 				try {
 					BufferedReader reader = new BufferedReader(new FileReader("src/project/data.txt"));
 					
@@ -61,6 +62,7 @@ public class main {
 						 * Each read line is parsed into an int, to creat a comparableInt Object
 						 */
 						ListOfInts[i] = new comparableInt(Integer.parseInt(ScannedNumber));
+						System.out.println(Integer.parseInt(ScannedNumber));
 					}
 
 			
@@ -108,7 +110,11 @@ public class main {
 			}
 			
 			else if(option == 5) {
-				
+				QuickSort myQuickSort = new QuickSort();
+				comparableInt[] listResult = (comparableInt[]) myQuickSort.Ascending(ListOfInts, 0, ListOfInts.length-1);
+				for (int i = 0; i < listResult.length; i++) {
+					System.out.println(listResult[i].getIntNumber());
+				}
 			}
 			
 			else if(option == 6) {
